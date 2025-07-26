@@ -1,0 +1,121 @@
+:root {
+    --heading-font: 'Playwrite AU SA', sans-serif;
+    --body-font: 'Lora', serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #d4e5ff;
+    overflow: hidden;
+    font-family: var(--body-font);
+}
+
+.container {
+    height: 500px;
+    width: 700px;
+    border: 1px solid #D4E5FF;
+    border-radius: 15px;
+    margin: 100px auto;
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    box-shadow: 0 4px 6px rgba(72, 108, 169, 0.5), 0 1px 3px rgba(72, 108, 169, 0.15);
+}
+
+.image {
+    height: 100%;
+    width: 45%;
+    /* border: 1px solid #000; */
+    border-radius: 8px;
+    float: left;
+    background-image: url(../img/register-pic.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    height: 100%;
+    width: 55%;
+    /* border: 1px solid #000; */
+}
+
+form {
+    height: 400px;
+    width: 350px;
+    /* border: 1px solid #000; */
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px auto;
+    border-radius: 8px;
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+}
+
+form .input-box {
+    height: 50px;
+    width: 100%;
+    /* border: 1px solid #000; */
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #fafafa;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 8px;
+    font-family: var(--body-font);
+    background-color: #fafafa;
+}
+
+form button {
+    height: 50px;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--body-font);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    background-color: #174dec;
+    color: #fff;
+    cursor: pointer;
+}
+
+form .login {
+    text-align: center;
+    margin: 5px auto 5px auto;
+    font-family: var(--body-font);
+}
+
+form .login a {
+    text-decoration: none;
+    color: #000;
+}
+
+form .login a:hover {
+    text-decoration: underline;
+    color: #174dec;
+}

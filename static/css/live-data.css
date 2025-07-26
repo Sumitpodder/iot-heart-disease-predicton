@@ -1,0 +1,36 @@
+:root {
+    --heading-font: 'Playwrite AU SA', sans-serif;
+    --body-font: 'Raleway', sans-serif;
+}
+
+.container {
+    height: 500px;
+    width: 80%;
+    border: 1px solid #D4E5FF;
+    border-radius: 15px;
+    margin: 100px auto;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(72, 108, 169, 0.5), 0 1px 3px rgba(72, 108, 169, 0.15);
+    overflow: hidden;
+    
+}
+
+.container > h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: #174dec;
+}
+
+.container > .live-data {
+    height: 350px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.live-data > table {
+    height: 100%;
+    width: 100%;
+}
