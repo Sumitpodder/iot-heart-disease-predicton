@@ -1,4 +1,4 @@
-# IoT Heart Disease Predictor
+# IoT Heart Disease Predicton
 
 A real-time IoT-based Heart Disease detector that collects data from sensors and predicts heart disease using machine learning.
 
