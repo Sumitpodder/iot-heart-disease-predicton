@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>HeartPredict - Medical Summary PDF</title>
+  <style type="text/css">
+    body {
+      font-family: 'DejaVu Sans', sans-serif;
+      font-size: 12pt;
+      margin: 30px;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .summary-container {
+      width: 100%;
+      border: 1px solid #cccccc;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 18pt;
+      color: #007b5e;
+      margin-bottom: 20px;
+    }
+
+    .profile-card {
+      text-align: center;
+      border: 1px solid #cccccc;
+      padding: 10px;
+      margin: 0 auto 20px auto;
+      width: 300px;
+    }
+
+    .grid, .info-section {
+      margin-top: 20px;
+    }
+
+    .card, .info, .test-reports {
+      border: 1px solid #aaaaaa;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card p, .info p {
+      margin: 5px 0;
+      font-size: 10pt;
+    }
+
+    .test-reports h4 {
+      font-size: 12pt;
+      margin-bottom: 5px;
+      color: #333333;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 9pt;
+      color: #888888;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="summary-container">
+    <h2>Heart Disease Prediction Report Summary</h2>
+
+    {% for record in records %}
+    <div class="profile-card">
+      <p style="text-transform: uppercase;"><strong>Name:</strong> {{ record.name }}</p>
+      <p><strong>Age:</strong> {{ record.age }}</p>
+      <p><strong>Gender:</strong> {{ record.gender }}</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <p><strong>Heart Rate:</strong> {{ record.heartrate }} bpm</p>
+      </div>
+      <div class="card">
+        <p><strong>SpO2 Level:</strong> {{ record.spo2 }}%</p>
+      </div>
+      <div class="card">
+        <p><strong>Depression Level:</strong> {{ record.oldpeak }}</p>
+      </div>
+      <div class="card">
+        <p><strong>Max Heart Rate:</strong> {{ record.thalach }}</p>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="info">
+        <p><strong>Chest Pain:</strong> {{ record.get_cp_display }}</p>
+        <p><strong>Resting BP:</strong> {{ record.trestbps }}</p>
+        <p><strong>Cholesterol:</strong> {{ record.chol }}</p>
+        <p><strong>Heart Abnormality:</strong> {{ record.get_ca_display }}</p>
+        <p><strong>Thalassemia:</strong> {{ record.get_thal_display }}</p>
+      </div>
+
+      <div class="test-reports">
+        <h4>Diagnosis Result: {{ record.result }}</h4>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="footer">
+      &copy; 2025 HeartPredict. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>

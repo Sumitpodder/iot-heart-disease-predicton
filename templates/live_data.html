@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HeartPredict | Live Sensor Data</title>
+    <meta http-equiv="refresh" content="15">
+    <link href="{% static 'css/live-data.css' %}" rel="stylesheet">
+
+    {% comment %} Font {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Live Sensor Data from DynamoDB</h1>
+        <div class="live-data">
+            <table border="1">
+                <tr style="font-family:'Courier New', Courier, monospace;">
+                    <th>Timestamp</th>
+                    <th>Oldpeak</th>
+                    <th>Lead Off</th>
+                    <th>Thalach</th>
+                    <th>SPO2</th>
+                    <th>ECG BPM</th>
+                    <th>Slope</th>
+                    <th>Heart Rate</th>
+                    {% comment %} <th>Rest ECG</th> {% endcomment %}
+                </tr>
+                {% for row in data %}
+                <tr style="text-align: center; font-family: 'Raleway'; font-size: 14px; font-weight: 500;">
+                    <td>{{ row.timestamp }}</td>
+                    <td>{{ row.oldpeak }}</td>
+                    <td>{{ row.lead_off }}</td>
+                    <td>{{ row.thalach }}</td>
+                    <td>{{ row.spo2 }}</td>
+                    <td>{{ row.ecg_bpm }}</td>
+                    <td>{{ row.slope }}</td>
+                    <td>{{ row.heart_rate }}</td>
+                    {% comment %} <td>{{ row.rest_ecg }}</td> {% endcomment %}
+                </tr>
+                {% empty %}
+                <tr><td colspan="9">No data available</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
